@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+<title>title</title>
+</head>
+<body class="bg-ligth">
+ <div class="container">
+  <div class="row justify-content-md-center">
+   <div class="col-md-8 order-md-1">
+    <h4 class="border-bottom my-3" th:text="#{invoice}"></h4>
+     <p class="text-danger" th:text="#{confirmationMessage}"></p>
+     <div th:object="${invoice}">
+      <div class="form-group">
+       <label for="name" th:text="#{name}"></label>
+        <input type="text" class="form-control"th:field="*{name}"disabled>     
+      </div>
+      
+      <div class="form-group">
+       <label for="address"th:text="#{address}" ></label>
+       <input type="text"class="form-control"th:field="*{address}"disabled>
+      </div>
+      
+      <div class="form-group">
+       <label for="phoneNumber" th:text="#{phoneNumber}"></label>
+        <input type="tel" class="form-control" th:field="*{phoneNumber}"disabled>      
+      </div>
+      
+      <div class="form-group">
+       <label for="price" th:text="#{price}"></label>
+        <input type="text" class="form-control" th:field="*{price}"disabled>
+      </div>
+      
+      <div class="form-group">
+       <label for="paymentDeadline" th:text="#{paymentDeadline}"></label>
+        <input type="date" class="form-control" th:field="*{paymenteDeadline}" disabled>
+      </div>
+     </div>
+    </div>
+  </div>
+ </div>
+ <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+ <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+ <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+</body>
+</html>
